@@ -81,7 +81,8 @@
             double P1h = P1 / 2; //полупериметр1
             double P2h = P2 / 2; //полупериметр2
 
-            S1 = Math.Sqrt(P1h*(P1h-l11)*(P1h-l12)*(P1h-l13)); //Формула Герона (считает с погрешностью ~0.0000000009, поэтому костыли в виде приведение к int и 0.1 внизу)
+            S1 = Math.Sqrt(P1h*(P1h-l11)*(P1h-l12)*(P1h-l13)); //Формула Герона (считает с погрешностью ~0.0000000009)
+            Console.Clear();
             Console.WriteLine($"Площадь первого треугольника равна: {S1}");
 
             S2 = Math.Sqrt(P2h * (P2h - l21) * (P2h - l22) * (P2h - l23)); //Формула Герона
@@ -95,127 +96,133 @@
                 l31 = Math.Sqrt((x1 - x4) * (x1 - x4) + (y1 - y4) * (y1 - y4));
                 l32 = Math.Sqrt((x2 - x4) * (x2 - x4) + (y2 - y4) * (y2 - y4));
                 Ph = (l11 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11));
 
                 l31 = Math.Sqrt((x1 - x4) * (x1 - x4) + (y1 - y4) * (y1 - y4));
                 l32 = Math.Sqrt((x3 - x4) * (x3 - x4) + (y3 - y4) * (y3 - y4));
                 Ph = (l12 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12));
 
                 l31 = Math.Sqrt((x2 - x4) * (x2 - x4) + (y2 - y4) * (y2 - y4));
                 l32 = Math.Sqrt((x3 - x4) * (x3 - x4) + (y3 - y4) * (y3 - y4));
                 Ph = (l13 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13));
 
-                ss1 = (int)s1 + (int)s2 + (int)s3; 
+                ss1 = s1 + s2 + s3; 
 
                 l31 = Math.Sqrt((x1 - x5) * (x1 - x5) + (y1 - y5) * (y1 - y5));
                 l32 = Math.Sqrt((x2 - x5) * (x2 - x5) + (y2 - y5) * (y2 - y5));
                 Ph = (l11 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11));
 
                 l31 = Math.Sqrt((x1 - x5) * (x1 - x5) + (y1 - y5) * (y1 - y5));
                 l32 = Math.Sqrt((x3 - x5) * (x3 - x5) + (y3 - y5) * (y3 - y5));
                 Ph = (l12 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12));
 
                 l31 = Math.Sqrt((x2 - x5) * (x2 - x5) + (y2 - y5) * (y2 - y5));
                 l32 = Math.Sqrt((x3 - x5) * (x3 - x5) + (y3 - y5) * (y3 - y5));
                 Ph = (l13 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13));
 
-                ss2 = (int)s1 + (int)s2 + (int)s3;
+                ss2 = s1 + s2 + s3;
 
                 l31 = Math.Sqrt((x1 - x6) * (x1 - x6) + (y1 - y6) * (y1 - y6));
                 l32 = Math.Sqrt((x2 - x6) * (x2 - x6) + (y2 - y6) * (y2 - y6));
                 Ph = (l11 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l11));
 
                 l31 = Math.Sqrt((x1 - x6) * (x1 - x6) + (y1 - y6) * (y1 - y6));
                 l32 = Math.Sqrt((x3 - x6) * (x3 - x6) + (y3 - y6) * (y3 - y6));
                 Ph = (l12 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l12));
 
                 l31 = Math.Sqrt((x2 - x6) * (x2 - x6) + (y2 - y6) * (y2 - y6));
                 l32 = Math.Sqrt((x3 - x6) * (x3 - x6) + (y3 - y6) * (y3 - y6));
                 Ph = (l13 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l13));
 
-                ss3 = (int)s1 + (int)s2 + (int)s3;
+                ss3 = s1 + s2 + s3;
 
                 Console.WriteLine($"Площадь первой части = {ss1}\t, Площадь второй = {ss2}\t, Площадь третьей = {ss3}\n");
 
-                if (ss1 == ss2 & ss1 == ss3 & ss2 == ss3)
+                if (ss1 <= (ss2 + 0.00000001) & ss1 >= (ss2 - 0.00000001) & ss1 <= (ss3 + 0.00000001) & ss1 >= (ss3 - 0.00000001) & ss2 <= (ss3 + 0.00000001) & ss2 >= (ss3 - 0.00000001)) //здесь странное условие, потому что погрешность мешает сравнивать
                 {
+                    double S;
                     Console.WriteLine("Они равны, значит второй треугольник внутри первого!");
+                    S = S1 - S2;
+                    Console.WriteLine($"Площадь, не принадлежащая внутреннему треугольнику равна {S}\n\n\n\n\n\n\n\n");
                 }
-                else Console.WriteLine("Ни один треугольник не входит полностью в другой");
+                else Console.WriteLine("Ни один треугольник не входит полностью в другой \n\n\n\n\n\n\n\n");
             }
             else if (S2 > S1)
             {
                 l31 = Math.Sqrt((x4 - x1) * (x4 - x1) + (y4 - y1) * (y4 - y1));
                 l32 = Math.Sqrt((x5 - x1) * (x5 - x1) + (y5 - y1) * (y5 - y1));
                 Ph = (l21 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21));
 
                 l31 = Math.Sqrt((x4 - x1) * (x4 - x1) + (y4 - y1) * (y4 - y1));
                 l32 = Math.Sqrt((x6 - x1) * (x6 - x1) + (y6 - y1) * (y6 - y1));
                 Ph = (l22 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22));
 
                 l31 = Math.Sqrt((x5 - x1) * (x5 - x1) + (y5 - y1) * (y5 - y1));
                 l32 = Math.Sqrt((x6 - x1) * (x6 - x1) + (y6 - y1) * (y6 - y1));
                 Ph = (l23 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23));
 
-                ss1 = (int)s1 + (int)s2 + (int)s3;
+                ss1 = s1 + s2 + s3;
 
                 l31 = Math.Sqrt((x4 - x2) * (x4 - x2) + (y4 - y2) * (y4 - y2));
                 l32 = Math.Sqrt((x5 - x2) * (x5 - x2) + (y5 - y2) * (y5 - y2));
                 Ph = (l21 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21));
 
                 l31 = Math.Sqrt((x4 - x2) * (x4 - x2) + (y4 - y2) * (y4 - y2));
                 l32 = Math.Sqrt((x6 - x2) * (x6 - x2) + (y6 - y2) * (y6 - y2));
                 Ph = (l22 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22));
 
                 l31 = Math.Sqrt((x5 - x2) * (x5 - x2) + (y5 - y2) * (y5 - y2));
                 l32 = Math.Sqrt((x6 - x2) * (x6 - x2) + (y6 - y2) * (y6 - y2));
                 Ph = (l23 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23));
 
-                ss2 = (int)s1 + (int)s2 + (int)s3;
+                ss2 = s1 + s2 + s3;
 
                 l31 = Math.Sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
                 l32 = Math.Sqrt((x5 - x3) * (x5 - x3) + (y5 - y3) * (y5 - y3));
                 Ph = (l21 + l31 + l32) / 2;
-                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21)) + 0.1;
+                s1 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l21));
 
                 l31 = Math.Sqrt((x4 - x3) * (x4 - x3) + (y4 - y3) * (y4 - y3));
                 l32 = Math.Sqrt((x6 - x3) * (x6 - x3) + (y6 - y3) * (y6 - y3));
                 Ph = (l22 + l31 + l32) / 2;
-                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22)) + 0.1;
+                s2 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l22));
 
                 l31 = Math.Sqrt((x5 - x3) * (x5 - x3) + (y5 - y3) * (y5 - y3));
                 l32 = Math.Sqrt((x6 - x3) * (x6 - x3) + (y6 - y3) * (y6 - y3));
                 Ph = (l23 + l31 + l32) / 2;
-                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23)) + 0.1;
+                s3 = Math.Sqrt(Ph * (Ph - l31) * (Ph - l32) * (Ph - l23));
 
-                ss3 = (int)s1 + (int)s2 + (int)s3;
+                ss3 = s1 + s2 + s3;
 
                 Console.WriteLine($"Площадь первой части = {ss1}\t, Площадь второй = {ss2}\t, Площадь третьей = {ss3}\n");
 
-                if (ss1 == ss2 & ss1 == ss3 & ss2 == ss3)
+                if (ss1 <= (ss2 + 0.00000001) & ss1 >= (ss2 - 0.00000001) & ss1 <= (ss3 + 0.00000001) & ss1 >= (ss3 - 0.00000001) & ss2 <= (ss3 + 0.00000001) & ss2 >= (ss3 - 0.00000001))//здесь странное условие, потому что погрешность мешает сравнивать
                 {
+                    double S;
                     Console.WriteLine("Площади равны, значит первый треугольник внутри второго!");
+                    S = S2 - S1; 
+                    Console.WriteLine($"Площадь, не принадлежащая внутреннему треугольнику равна {S}\n\n\n\n\n\n\n\n");
                 }
-                else Console.WriteLine("Ни один треугольник не входит полностью в другой");
+                else Console.WriteLine("Ни один треугольник не входит полностью в другой\n\n\n\n\n\n\n\n");
             }
-            else Console.WriteLine("треугольники равны!");
+            else Console.WriteLine("треугольники равны!\n\n\n\n\n\n\n\n");
         }
 
-        //функции ниже нужно заполнить блоками сверху, назначив соответствующие параметры и ретурны, я ща спать хачу, ни магу уже ничего ааааа как же долго я разбирался в этом изиче
+        //функции ниже нужно заполнить блоками сверху, назначив соответствующие параметры и ретурны
         double Lines() //расчет длин сторон
         {
 
