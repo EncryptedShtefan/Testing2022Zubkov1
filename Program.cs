@@ -245,7 +245,7 @@
 
 using System;
 
-namespace brig
+namespace Testing2022Zubkov1
 {
     class Program
     {
